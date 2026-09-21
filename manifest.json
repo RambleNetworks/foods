@@ -1,0 +1,15 @@
+{
+  "name": "eCat_Helper-v2",
+  "short_name": "eCat_Helper",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
