@@ -1,0 +1,19 @@
+name: Hugging Face Space Keep-Alive
+
+on:
+  schedule:
+    # Run every 6 hours automatically in background
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping AdityaChetri/Foods Backend
+        run: |
+          echo "Pinging Space health endpoint..."
+          curl -s -o /dev/null -w "Health HTTP Code: %{http_code}\n" https://adityachetri-foods.hf.space/health || true
+          echo "Pinging Space UI..."
+          curl -s -o /dev/null -w "Space UI HTTP Code: %{http_code}\n" https://huggingface.co/spaces/AdityaChetri/Foods || true
